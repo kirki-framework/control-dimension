@@ -12,6 +12,7 @@
 namespace Kirki\Control;
 
 use Kirki\Control\Base;
+use Kirki\Core\Kirki;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,15 +65,7 @@ class Dimension extends Base {
 			[],
 			KIRKI_VERSION
 		);
-	}
 
-	/**
-	 * Enqueue control related scripts/styles.
-	 *
-	 * @access public
-	 */
-	public function enqueue() {
-		parent::enqueue();
 		wp_localize_script(
 			'kirki-script',
 			'dimensionkirkiL10n',

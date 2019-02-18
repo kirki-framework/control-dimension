@@ -38,6 +38,41 @@ class Dimension extends Base {
 	 */
 	public function enqueue() {
 		parent::enqueue();
+
+		$url = apply_filters(
+			'kirki_package_url_control_dimension',
+			trailingslashit( Kirki::$url ) . 'packages/kirki-framework/control-dimension/src'
+		);
+
+		// Enqueue the script.
+		wp_enqueue_script(
+			'kirki-control-dimension',
+			"$url/assets/scripts/control.js",
+			[
+				'kirki-script',
+				'jquery',
+				'customize-base',
+			],
+			KIRKI_VERSION,
+			false
+		);
+
+		// Enqueue the style.
+		wp_enqueue_style(
+			'kirki-control-dimension-style',
+			"$url/assets/styles/style.css",
+			[],
+			KIRKI_VERSION
+		);
+	}
+
+	/**
+	 * Enqueue control related scripts/styles.
+	 *
+	 * @access public
+	 */
+	public function enqueue() {
+		parent::enqueue();
 		wp_localize_script(
 			'kirki-script',
 			'dimensionkirkiL10n',

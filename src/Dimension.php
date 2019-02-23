@@ -42,7 +42,7 @@ class Dimension extends Base {
 
 		$url = apply_filters(
 			'kirki_package_url_control_dimension',
-			trailingslashit( Kirki::$url ) . 'packages/kirki-framework/control-dimension/src'
+			trailingslashit( Kirki::$url ) . 'vendor/kirki-framework/control-dimension/src'
 		);
 
 		// Enqueue the script.

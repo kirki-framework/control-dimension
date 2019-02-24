@@ -50,7 +50,6 @@ class Dimension extends Base {
 			'kirki-control-dimension',
 			"$url/assets/scripts/control.js",
 			[
-				'kirki-script',
 				'jquery',
 				'customize-base',
 				'kirki-dynamic-control',
@@ -68,7 +67,7 @@ class Dimension extends Base {
 		);
 
 		wp_localize_script(
-			'kirki-script',
+			'kirki-control-dimension',
 			'dimensionkirkiL10n',
 			array(
 				'invalid-value' => esc_html__( 'Invalid Value', 'kirki' ),

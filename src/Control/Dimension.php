@@ -69,6 +69,21 @@ class Dimension extends Base {
 	}
 
 	/**
+	 * Get the URL for the control folder.
+	 *
+	 * This is a static method because there are more controls in the Kirki framework
+	 * that use colorpickers, and they all need to enqueue the same assets.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @return string
+	 */
+	public static function get_control_path_url() {
+		return URL::get_from_path( dirname( __DIR__ ) );
+	}
+
+	/**
 	 * An Underscore (JS) template for this control's content (but not its container).
 	 *
 	 * Class variables for this control class are available in the `data` JS object;
